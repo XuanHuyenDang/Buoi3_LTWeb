@@ -9,14 +9,14 @@
 <style>
 body {
 	font-family: Arial, sans-serif;
-	background: #f0f2f5;
+	background: #e6f0ff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 }
 
-.login-container {
+.container {
 	background: #fff;
 	padding: 30px 40px;
 	border-radius: 10px;
@@ -27,7 +27,7 @@ body {
 h2 {
 	text-align: center;
 	margin-bottom: 25px;
-	color: #333;
+	color: #004080;
 }
 
 label {
@@ -39,9 +39,9 @@ label {
 
 input[type="text"], input[type="password"] {
 	width: 100%;
-	padding: 10px 12px;
+	padding: 10px;
 	margin-bottom: 15px;
-	border: 1px solid #ccc;
+	border: 1px solid #b3c6ff;
 	border-radius: 5px;
 	box-sizing: border-box;
 	font-size: 14px;
@@ -50,7 +50,7 @@ input[type="text"], input[type="password"] {
 button {
 	width: 100%;
 	padding: 10px;
-	background-color: #4CAF50;
+	background-color: #004080;
 	border: none;
 	color: white;
 	font-size: 16px;
@@ -59,7 +59,7 @@ button {
 }
 
 button:hover {
-	background-color: #45a049;
+	background-color: #0066cc;
 }
 
 .alert {
@@ -68,27 +68,38 @@ button:hover {
 	margin-bottom: 15px;
 }
 
-.register-link {
+.success {
+	color: green;
 	text-align: center;
-	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
-.register-link a {
+.link {
+	text-align: center;
+	margin-top: 10px;
+}
+
+.link a {
 	text-decoration: none;
-	color: #4CAF50;
+	color: #004080;
 }
 
-.register-link a:hover {
+.link a:hover {
 	text-decoration: underline;
 }
 </style>
 </head>
 <body>
-	<div class="login-container">
+	<div class="container">
 		<h2>Đăng nhập hệ thống</h2>
 
 		<c:if test="${alert != null}">
 			<p class="alert">${alert}</p>
+		</c:if>
+
+		<c:if test="${param.message == 'resetSuccess'}">
+			<p class="success">Cập nhật mật khẩu thành công. Hãy đăng nhập
+				lại.</p>
 		</c:if>
 
 		<form action="${pageContext.request.contextPath}/login" method="post">
@@ -100,7 +111,11 @@ button:hover {
 			<button type="submit">Đăng nhập</button>
 		</form>
 
-		<div class="register-link">
+		<div class="link">
+			<p>
+				<a href="${pageContext.request.contextPath}/forget.jsp">Quên mật
+					khẩu?</a>
+			</p>
 			<p>
 				Chưa có tài khoản? <a
 					href="${pageContext.request.contextPath}/register.jsp">Đăng ký</a>
