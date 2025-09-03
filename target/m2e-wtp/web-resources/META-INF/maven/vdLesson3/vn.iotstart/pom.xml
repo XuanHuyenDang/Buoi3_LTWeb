@@ -7,6 +7,18 @@
 	<version>1.1.0</version>
 	<packaging>war</packaging>
 	<dependencies>
+		<!--
+		https://mvnrepository.com/artifact/org.apache.commons/commons-fileupload2-jakarta-servlet6 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-fileupload2-jakarta-servlet6</artifactId>
+			<version>2.0.0-M2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.16.1</version>
+		</dependency>
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>apache-jsp</artifactId>
@@ -46,6 +58,11 @@
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>mssql-jdbc</artifactId>
 			<version>12.8.1.jre11</version>
+		</dependency>
+		<dependency>
+			<groupId>CookieLogin</groupId>
+			<artifactId>CookieLoginPost</artifactId>
+			<version>1.1.0</version>
 		</dependency>
 	</dependencies>
 
